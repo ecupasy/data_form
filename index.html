@@ -8,72 +8,70 @@
 </head>
 <body>
     <div class="container">
-        <form action="action.php" method="POST" name="comments_form">
-            <div class="step_container">
-                <div class="title" id="first_title" onclick="data.open(this);"><span>Step 1: Your details</span></div>
-                <div class="step" id="first_step">
-                    <div>
-                        <div style="float: left;">
-                            <span class="input_title">First name</span><br>
-                            <input class="imput_text" type="text" name="firstname" id="firstname"><br>
-                        </div>
-                        <div>
-                            <span class="input_title">Last name:</span><br>
-                            <input class="imput_text" id="lastname" type="text" name="lastname">
-                        </div>
+        <div class="step_container">
+            <div class="title" id="first_title" onclick="data.open(this);"><span>Step 1: Your details</span></div>
+            <div class="step" id="first_step">
+                <div>
+                    <div style="float: left;">
+                        <span class="input_title">First name</span><br>
+                        <input class="imput_text" type="text" name="firstname" id="firstname"><br>
                     </div>
+                    <div>
+                        <span class="input_title">Last name:</span><br>
+                        <input class="imput_text" id="lastname" type="text" name="lastname">
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <span class="input_title">Email Address:</span><br>
+                    <input class="imput_text" type="email" name="email" id="email_id">
+                </div>
+                <div class="next_button_container">
+                    <input class="next_button" type="button" value="Next >" onclick="data.first();">
+                </div>
+            </div>
+        </div>
+        <div class="step_container">
+            <div class="title" id="second_title" onclick="data.open(this);"><span>Step 2: More Comments</span></div>
+            <div class="step" id="second_step" style="display: none;">
+                <div>
+                    <div style="float: left;">
+                        <span class="input_title">Telephone number</span><br>
+                        <input class="imput_text" type="text" name="phone" id="phone"><br>
+                    </div>
+                    <div>
+                        <span class="input_title">Gender</span><br>
+                        <select name="gender" id="gender" class="imput_text">
+                            <option value="None selected">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <span class="input_title">Date of birth <span style="font-size: 10px;">(dd/mm/YYYY)</span><br>
+                    <input class="imput_text" type="text" name="day" id="day" style="width: 25px;" maxlength="2">
+                    <input class="imput_text" type="text" name="month" id="month" style="width: 25px;" maxlength="2">
+                    <input class="imput_text" type="text" name="year" id="year" style="width: 25px;" maxlength="4">
+                </div>
+                <div class="next_button_container">
+                    <input class="next_button" type="button" value="Next >" onclick="data.second();">
+                </div>
+            </div>
+        </div>
+        <div class="step_container">
+            <div class="title" id="third_title" onclick="data.open(this);"><span>Step 3: Final comments</span></div>
+            <div class="step" id="third_step" style="display: none;">
+                <div class="comments">
+                    <span class="input_title">Comments</span>
                     <br>
-                    <div>
-                        <span class="input_title">Email Address:</span><br>
-                        <input class="imput_text" type="email" name="email" id="email_id">
-                    </div>
-                    <div class="next_button_container">
-                        <input class="next_button" type="button" value="Next >" onclick="data.first();">
-                    </div>
+                    <textarea name="comments" rows="10" id="comments" cols="50"></textarea>
+                    <input class="next_button" type="button" value="Next >" onclick="data.third();">
                 </div>
             </div>
-            <div class="step_container">
-                <div class="title" id="second_title" onclick="data.open(this);"><span>Step 2: More Comments</span></div>
-                <div class="step" id="second_step" style="display: none;">
-                    <div>
-                        <div style="float: left;">
-                            <span class="input_title">Telephone number</span><br>
-                            <input class="imput_text" type="text" name="phone" id="phone"><br>
-                        </div>
-                        <div>
-                            <span class="input_title">Gender</span><br>
-                            <select name="gender" id="gender" class="imput_text">
-                                <option value="None selected">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <br>
-                    <div>
-                        <span class="input_title">Date of birth <span style="font-size: 10px;">(dd/mm/YYYY)</span><br>
-                        <input class="imput_text" type="text" name="day" id="day" style="width: 25px;" maxlength="2">
-                        <input class="imput_text" type="text" name="month" id="month" style="width: 25px;" maxlength="2">
-                        <input class="imput_text" type="text" name="year" id="year" style="width: 25px;" maxlength="4">
-                    </div>
-                    <div class="next_button_container">
-                        <input class="next_button" type="button" value="Next >" onclick="data.second();">
-                    </div>
-                </div>
-            </div>
-            <div class="step_container">
-                <div class="title" id="third_title" onclick="data.open(this);"><span>Step 3: Final comments</span></div>
-                <div class="step" id="third_step" style="display: none;">
-                    <div class="comments">
-                        <span class="input_title">Comments</span>
-                        <br>
-                        <textarea name="comments" rows="10" id="comments" cols="50"></textarea>
-                        <input class="next_button" type="button" value="Next >" onclick="data.third();">
-                    </div>
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>
